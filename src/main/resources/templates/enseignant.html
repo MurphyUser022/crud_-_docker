@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/styles_etudiant.css">
+
+
+  <title>etudiant</title>
+</head>
+<body>
+
+
+
+    <div class="content-2">
+      <div class="recent-payments">
+        <div class="title">
+          <h2>Enseignants</h2>
+          <h4 style="color:rgb(181, 34, 34)">Saisir toute les donnees</h4>
+          <div class="user">
+              <button href="" class="btn" id="button1">Ajouter des   Enseignant</button>
+
+          </div>
+        </div>
+        <table class="events-table">
+          <thead>
+          <tr>
+            <th class="event-date">Id</th>
+            <th class="event-date">Email</th>
+            <th class="event-date">Nom</th>
+            <th class="event-date">Mot de passe</th>
+           <th class="event-date">Modifier</th>
+            <th class="event-date">Supprimer</th>
+          </tr>
+          </thead>
+
+          <tbody>
+
+          <tr th:each="teacher : ${ens}">
+            <td data-label="Id">[[*{teacher.id}]]</td>
+            <td data-label="Email">[[*{teacher.email}]]</td>
+            <td data-label="Nom">[[*{teacher.nom}]]</td>
+            <td data-label="Mot de passe">[[*{teacher.password}]]</td>
+           <td data-label="Modifier" ><a  th:href="@{/edit/{id}(id=${teacher.id})}"><img src="img/icons8-crayon-50.png" alt=""></a>
+
+
+</td>
+            <td data-label="Supprimer"><a th:href="@{/delete_enseignant/{id}(id=${teacher.id})}"><img src="img/icons8-poubelle-50.png" alt=""></a></td>
+            <!--          -->
+          </tr>
+          </tbody>
+
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+    <h4 class=">Contactez-nous">Enregistrer un professeur dans mon application de gestion de fichi de suivie</h4>
+    <br>
+    <form action="/create_enseignant" method="Post" ENCTYPE="multipart/form-data" class="modal-form">
+      <label for="name" class="modal-label" >Votre nom</label>
+      <input type="text" id="name" class="modal-input" name="nom" required><br><br>
+      <label for="email" class="modal-label">Votre e-mail</label>
+      <input type="email" id="email" class="modal-input" name="mail" required><br><br>
+      <label for="password" class="modal-label">Votre mot de passe</label>
+      <input type="password" id="password" class="modal-input" name="password" required><br><br>
+      <button type="submit" class="modal-submit">Enregistrer</button>
+    </form>
+  </div>
+</div>
+
+
+
+<script>
+var modal1 = document.getElementById("modal1");
+var button1 = document.getElementById("button1");
+
+
+button1.onclick = function() {
+  modal1.style.display = "block";
+}
+
+
+
+var closeButtons = document.getElementsByClassName("close");
+for (var i = 0; i < closeButtons.length; i++) {
+  closeButtons[i].onclick = function() {
+    var modal = this.parentElement.parentElement;
+    modal.style.display = "none";
+  }
+}
+
+// window.onclick = function(event) {
+//   if (event.target == modal1) {
+//     event.target.style.display = "none";
+//   }
+// }
+   </script>
+
+
+</body>
+</html>

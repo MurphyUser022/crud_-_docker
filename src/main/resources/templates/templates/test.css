@@ -1,0 +1,278 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    position: relative;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+h1,
+h2{
+    color: #444;
+}
+h3{
+    color: #999;
+}
+
+.btn{
+    background: #f05462;
+    color: white;
+    padding: 5px 10px;
+    text-align: center;
+    border: #f05462;
+}
+.btn:hover{
+    color: #f05462;
+    background: white;
+    padding: 3px 8px;
+    border: 2px solid #f05462;
+    border: #f05462;
+}
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 10px;
+    border-bottom: 2px solid #999;
+}
+
+table{
+    padding: 10px;
+}
+
+th,td{
+    text-align: left;
+    padding: 8px;
+}
+/*sidebar*/
+.side-menu{
+    position: fixed;
+    background: #f05462;
+    width: 20vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.side-menu .brand-name{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.side-menu li a{
+    font-size: 20px;
+    padding: 10px 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.side-menu li a:hover{
+    background: white;
+    color: #f05462;
+}
+
+.side-menu .brand-name li .etudiant:active{
+    background: white;
+    color: #f05462;
+}
+/*container-header*/
+.container{
+    position: absolute;
+    right: 0;
+    width: 85vw;
+    height: 100vh;
+    background: #f1f1f1;
+    z-index: 1;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  .modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 700px; /* ajouté pour limiter la largeur de la modal */
+    box-sizing: border-box; /* ajouté pour que les bordures soient incluses dans la largeur */
+    position: relative; /* ajouté pour positionner le bouton de fermeture */
+  }
+  
+  .close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .modal-form {
+    display: flex;
+    flex-direction: column;
+    font-family: "Arial", sans-serif;
+    font-size: 18px;
+    line-height:0.8;
+  }
+  
+  .modal-input {
+    margin: 10px 0;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 16px;
+  }
+  
+  .modal-label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .modal-submit {
+    background-color: green;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .modal-submit:hover {
+    background-color: #45a049;
+  }
+  
+  
+  .contactez-nous {
+    width: 100%;
+    border: 1px solid;
+    border-radius: 8px;
+    box-sizing: border-box; /* ajouté pour que les bordures soient incluses dans la largeur */
+    padding: 20px;
+    margin-top: 20px;
+    padding-down:10px;
+  }
+  
+  
+  
+  
+/*responsive*/
+@media screen and (max-width: 1050px){
+    .side-menu li{
+        font-size: 14px;
+    }
+    .side-menu li a:hover{
+        background: #f05462;
+        color: #f05462;
+    }
+    .container .content-2 .recent-payments
+    {
+        /* display: none; */
+        width: 60vw;
+    }
+    table thead{
+        display: none; 
+    }   
+    table tr{
+        display: block;
+        margin-bottom: 40px;
+    }
+    table td{
+        display: block;
+        text-align: right;
+    }
+
+    table td::before{
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+    }
+    .brand-name h1{
+        display: none;
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 940px){
+    .brand-name h1{
+        display: none;
+        font-size: 15px;
+    }
+    .side-menu li span{
+        display: none;
+    }
+    .side-menu li a:hover{
+        background: #f05462;
+        color: #f05462;
+    }
+    .side-menu{
+        align-items: center;
+    }
+    .side-menu li img{
+        width: 40px;
+        height: 40px;
+    }
+    .side-menu li:hover{
+        background: #f05462;
+        padding: 8px 38px;
+        border: 2px solid white;
+    }
+}
+
+@media screen and (max-width: 536px){
+    .brand-name h1{
+        display: none;
+        font-size: 15px;
+    }
+    .container .content .cards{
+        justify-content: center;
+    }
+    .side-menu li img{
+        width: 30px;
+        height: 30px;
+    }
+    .side-menu li a:hover{
+        background: #f05462;
+        color: #f05462;
+    }
+    .container .content .content-2 .recent-payments table th:nth-child(2),
+    .container .content .content-2 .recent-payments table td:nth-child(2){
+        display: none;
+    }
+}

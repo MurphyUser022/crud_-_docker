@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 
+  <link rel="stylesheet" href="css/edit.css"> -->
+  <link rel="stylesheet" href="css/styles_etudiant.css">
+  <title>etudiant</title>
+</head>
+<body>
+
+
+<div class="container">
+  <form  th:action="@{/update/{id}(id=${id})}" method="post" class="modal-form">
+  <label for="name" class="modal-label">Nom</label>
+  <input type="text" id="name" class="modal-input" name="newnom" required><br><br>
+  <label for="email" class="modal-label">Email</label>
+  <input type="email" id="email" class="modal-input" name="newmail" required><br><br>
+  <label for="ps" class="modal-label">Message</label>
+  <textarea id="ps" class="modal-input" name="newpassword" required></textarea><br><br>
+  <button type="submit" class="modal-submit">Envoyer</button>
+</form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="test.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <button id="button1">Ouvrir Modal 1</button>
+<button id="button2">Ouvrir Modal 2</button>
+
+<div id="modal1" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Modal 1</h2>
+    <p>Contenu du Modal 1.</p>
+  </div>
+</div>
+
+<div id="modal2" class="modal">
+  <div class="modal-content">
+    <span class="close" style="color: rgb(30, 194, 71);">&times;</span>
+
+    <h2 class=">Contactez-nous">Enregistrer un professeur dans mon application de gestion de fichi de suivie</h2>
+    <br>
+    <form action="/create_enseignant" method="Post" ENCTYPE="multipart/form-data" class="modal-form">
+      <label for="name" class="modal-label" >Votre nom</label>
+      <input type="text" id="name" class="modal-input" name="nom"><br><br>
+      <label for="email" class="modal-label">Votre e-mail</label>
+      <input type="email" id="email" class="modal-input" name="mail"><br><br>
+      <label for="password" class="modal-label">Votre mot de passe</label>
+      <input type="password" id="password" class="modal-input" name="password"><br><br>
+      <button type="submit" class="modal-submit">Enregistrer</button>
+    </form>
+  </div>
+</div>
+
+<div id="main-content">
+  <p>Contenu de la page principale.</p>
+</div>
+
+<script>
+
+    var modal1 = document.getElementById("modal1");
+  var modal2 = document.getElementById("modal2");
+  var button1 = document.getElementById("button1");
+  var button2 = document.getElementById("button2");
+  
+  button1.onclick = function() {
+    modal1.style.display = "block";
+  }
+  
+  button2.onclick = function() {
+    modal2.style.display = "block";
+  }
+  
+  var closeButtons = document.getElementsByClassName("close");
+  for (var i = 0; i < closeButtons.length; i++) {
+    closeButtons[i].onclick = function() {
+      var modal = this.parentElement.parentElement;
+      modal.style.display = "none";
+    }
+  }
+  
+//   window.onclick = function(event) {
+//     if (event.target == modal1 || event.target == modal2) {
+//       event.target.style.display = "none";
+//     }
+//   }
+  
+    </script>
+</body>
+</html>
