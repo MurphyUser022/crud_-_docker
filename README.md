@@ -7,3 +7,5 @@ the user interface manage only :
 
 but the code contained in the controller manage well all these aspects including the update 
 this code will be modified with time thank you 
+
+and thanks to the Docker file, we can generate a Docker image of this program 
